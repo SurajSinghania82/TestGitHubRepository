@@ -13,3 +13,6 @@ jobs:
       - name: BuildStep_NUnitTests
         run: |
           pwsh -Command ./Test.ps1
+      - name: Test Step
+        uses: ./Test2.ps1
+      
