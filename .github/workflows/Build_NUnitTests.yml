@@ -1,0 +1,12 @@
+name: Build_NUnitTests1
+on:
+  push:
+    branches:
+      - refs/heads/main
+  workflow_dispatch: ''
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: BuildStep_NUnitTests
+        run: echo "test"
