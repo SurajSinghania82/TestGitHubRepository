@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - refs/heads/main
-  workflow_dispatch: 
+  workflow_dispatch: {}
 jobs:
   build:
     runs-on: ubuntu-latest
