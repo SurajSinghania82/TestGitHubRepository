@@ -14,6 +14,6 @@ jobs:
       - name: BuildStep_NUnitTests
         run: echo "Hello"
       - name: Test Step
-        run: |
+        run: |-
           pwsh -Command ./Test2.ps1
       
