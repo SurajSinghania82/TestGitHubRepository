@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: BuildStep_NUnitTests
-        run: echo "test"
+        uses: Test.ps1
