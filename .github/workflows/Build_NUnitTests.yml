@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      #- name: Checkout repository
+        #uses: actions/checkout@v2
       - name: BuildStep_NUnitTests
         run: |
           pwsh -Command ./Test.ps1
