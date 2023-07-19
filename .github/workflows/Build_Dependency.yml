@@ -1,0 +1,19 @@
+name: Build_Dependency
+on:
+  push:
+    branches:
+      - refs/heads/main
+  workflow_dispatch:
+    {}
+  workflow_run:
+    workflows: Build_NUnitTests1
+    types: [completed]
+jobs:
+  build_child:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Child
+        run: echo "Child Workflow"
+      
