@@ -7,7 +7,7 @@ on:
     {}
   workflow_run:
     workflows: Build_Dependency
-    types: [requested]
+    types: [completed]
 jobs:
   build_child:
     runs-on: ubuntu-latest
