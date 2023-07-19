@@ -1,0 +1,19 @@
+name: Build_Dependency2
+on:
+  push:
+    branches:
+      - refs/heads/main
+  workflow_dispatch:
+    {}
+  workflow_run:
+    workflows: Build_Dependency
+    types: [requested]
+jobs:
+  build_child:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Child
+        run: echo "Child Workflow 2"
+      
