@@ -7,16 +7,14 @@ on:
     {}
 jobs:
   build_dev:
-    runs-on:
-      - ubuntu-latest
+    runs-on: windows
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: BuildStep_NUnitTests
         run: echo "Hello"
       - name: Test Step
-        run: |-
-          pwsh -Command ./Test2.ps1
+        run: ./Test2.ps1
       - name: ping jfrog
         uses: jfrog/setup-jfrog-cli@v1
       - run: jfrog --version
