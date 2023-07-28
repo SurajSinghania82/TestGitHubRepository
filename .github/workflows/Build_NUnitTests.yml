@@ -7,7 +7,7 @@ on:
     {}
 jobs:
   build_dev:
-    runs-on: [linux]
+    runs-on: [ubu]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
