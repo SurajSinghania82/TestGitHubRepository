@@ -14,6 +14,5 @@ jobs:
       - name: BuildStep_NUnitTests
         run: echo "Hello"
       - name: Test Step
-        shell: bash
-        run: ./Test.sh
+        run: Test.sh
       
