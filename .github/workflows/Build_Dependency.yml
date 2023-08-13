@@ -15,5 +15,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Child
-        run: echo ${{  dependencies.Build_NUnitTests1.outputs.GITHUB_RUN_NUMBER }}}
+        run: echo ${dependencies.Build_NUnitTests1.outputs.GITHUB_RUN_NUMBER}
       
