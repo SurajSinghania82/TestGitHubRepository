@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set env
-      run: echo $GITHUB_TEST_ENV
+      run: echo ${GITHUB_RUN_NUMBER}
     - name: Test
-      run: echo $GITHUB_TEST_ENV
+      run: echo ${GITHUB_RUN_NUMBER}
       
