@@ -5,13 +5,17 @@ on:
       - refs/heads/main
   workflow_dispatch:
     {}
+env:
+  testParam: docksys
 jobs:
   build_dev:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set env
-      run: echo ${GITHUB_RUN_NUMBER}
+      run: echo ${GITHUB_REF#refs/heads/}
     - name: Test
-      run: echo ${GITHUB_RUN_NUMBER}
+      run: echo ${{ testParam }}
+    - name: Test2
+      run: echo ${testParam}
       
