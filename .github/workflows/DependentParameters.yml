@@ -8,16 +8,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      buildNumber: ${GITHUB_REF_NUMBER}
     steps:
     - uses: actions/checkout@v2
     - name: Set env
-      id: build
       run: echo "::set-output name=buildNumber::123"
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Deploy
       env: 
-        BUILD_NUMBER: ${{ needs.build.outputs.buildNumber }}
+        BUILD_NUMBER: ${{needs.build.outputs.buildNumber}}
       run: echo "Deploying build number $BUILD_NUMBER"
       
