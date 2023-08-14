@@ -9,11 +9,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      buildNumber: ${{ GITHUB_RUN_NUMBER }}
+      buildNumber: ${{ steps.step1.outputs.buildNumber }}
     steps:
     - uses: actions/checkout@v2
     - name: Set env
-      run: echo "::set-output name=buildNumber::123"
+      id: step1
+      run: echo "buildNumber=${GITHUB_RUN_NUMBER}" >> $GITHUB_OUTPUT
   deploy:
     runs-on: ubuntu-latest
     needs: build
