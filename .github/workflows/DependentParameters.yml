@@ -5,10 +5,8 @@ on:
       - refs/heads/main
   workflow_dispatch:
     {}
-env:
-  testParam: docksys
 jobs:
-  build_dev:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
