@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      buildNumber: ${GITHUB_REF_NUMBER}
+      buildNumber: ${{ GITHUB_REF_NUMBER }}
     steps:
     - uses: actions/checkout@v2
     - name: Set env
