@@ -18,4 +18,8 @@ jobs:
       #run: echo ${{ testParam }}
     - name: Test2
       run: echo ${testParam}
+    - name: github.workspace
+      run: echo ${{ github.workspace }}
+    - name: GITHUB_WORKSPACE
+      run: echo ${GITHUB_WORKSPACE}
       
