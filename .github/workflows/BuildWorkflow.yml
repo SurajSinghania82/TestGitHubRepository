@@ -1,0 +1,22 @@
+name: Build Workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+    
+      - name: Build
+        run: |
+          # Your build commands here
+          BUILD_NUMBER=123 # Replace with the actual build number
+          echo $BUILD_NUMBER > build_number.txt
+      - name: Upload Build Number
+        uses: actions/upload-artifact@v2
+        with:
+          name: build_number
+          path: build_number.txt
