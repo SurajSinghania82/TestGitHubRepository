@@ -15,7 +15,7 @@ jobs:
     - name: Set env
       run: echo ${GITHUB_REF#refs/heads/}
     - name: Set env
-      run: echo ${{github.ref}}
+      run: echo ${{github.ref#refs/heads/}}
     #- name: Test
       #run: echo ${{ testParam }}
     - name: Test2
