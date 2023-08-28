@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     {}
 env:
-  testParam: docksys
+  project.code: docksys
 jobs:
   build_dev:
     runs-on: ubuntu-latest
@@ -14,10 +14,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set env
       run: echo ${GITHUB_REF#refs/heads/}
-    - name: Set env
-      run: echo ${{github.ref#refs/heads/}}
     #- name: Test
       #run: echo ${{ testParam }}
     - name: Test2
-      run: echo "${{ env.testParam }}"
+      run: echo "${{ env.project.code }}"
       
