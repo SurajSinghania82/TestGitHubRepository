@@ -17,5 +17,12 @@ jobs:
     #- name: Test
       #run: echo ${{ testParam }}
     - name: Test2
-      run: echo "${{ env.project_code }}"
+      run: echo "${{ env.project_code }}" > test.txt
+    - name: create directory
+      shell: sh
+      run: |-
+        ls
+        mkdir ./pay/14.0.136.1
+        ls
+        cp ./test.txt ./pay/14.0.136.1/
       
