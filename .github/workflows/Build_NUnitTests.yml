@@ -22,7 +22,7 @@ jobs:
       shell: sh
       run: |-
         ls
-        mkdir ./pay/14.0.136.1
+        mkdir pay/14.0.136.1
         ls
         cp ./test.txt ./pay/14.0.136.1/
       
