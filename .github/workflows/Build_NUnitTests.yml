@@ -6,23 +6,15 @@ on:
   workflow_dispatch:
     {}
 env:
-  project_code: docksys
+  project_code: ${{ env.testParam }}
+  testParam: docksys
 jobs:
   build_dev:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set env
-      run: echo ${GITHUB_REF#refs/heads/}
+    - uses: actions/checkout@v2]
     #- name: Test
       #run: echo ${{ testParam }}
     - name: Test2
       run: echo "${{ env.project_code }}" > test.txt
-    - name: create directory
-      shell: sh
-      run: |-
-        ls
-        mkdir -p pay/14.0.136.1
-        ls
-        cp ./test.txt ./pay/14.0.136.1/test.txt
       
