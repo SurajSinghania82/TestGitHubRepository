@@ -12,7 +12,6 @@ jobs:
   build_dev:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2]
     #- name: Test
       #run: echo ${{ testParam }}
     - name: Test2
