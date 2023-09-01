@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     {}
 env:
-  project_code: ${testParam}
+  project_code:
   testParam: docksys
 jobs:
   build_dev:
@@ -15,5 +15,5 @@ jobs:
     #- name: Test
       #run: echo ${{ testParam }}
     - name: Test2
-      run: echo "${{ env.project_code }}" > test.txt
+      run: echo ${{ github.head_ref || github.ref_name }} 
       
