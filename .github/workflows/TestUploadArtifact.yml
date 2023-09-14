@@ -1,0 +1,19 @@
+name: TestUploadArtifact
+on:
+  push:
+    branches:
+      - refs/heads/main
+  workflow_dispatch:
+    {}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test
+      run: echo "Hello world" > publish/Test1.txt
+    - name: Test
+      run: echo "Hello world again" > publish/Test2.txt
+    - uses: actions/upload-artifact@v3
+      with:
+        name: artifact
+        path: publish/*
