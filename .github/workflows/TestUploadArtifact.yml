@@ -20,5 +20,9 @@ jobs:
       run: echo "Hello world again" > publish/Test2.txt
     - uses: actions/upload-artifact@v3
       with:
-        name: artifact
-        path: publish/*
+        name: Test1.txt
+        path: publish/Test1.txt
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Test2.txt
+        path: publish/Test2.txt
