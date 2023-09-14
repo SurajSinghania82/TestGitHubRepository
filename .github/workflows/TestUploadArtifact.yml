@@ -12,12 +12,10 @@ jobs:
     steps:
     - name: Test
       run: |-
-        mkdir publish
-        touch publish/Test1.txt
-        touch publish/Test2.txt
-        echo "Hello world" > publish/Test1.txt
+        touch integrationtests_group1_script.sh
+        echo 'files=$(find "../tests/distribution/Release/publish" -name "*.Tests.dll" | tr '\n' ' ')' >> integrationtests_group1_script.sh
+        echo 'echo $files' >> integrationtests_group1_script.sh
     - name: Test
-      run: echo "Hello world again" > publish/Test2.txt
-    - uses: actions/upload-artifact@v3
-      with:
-        path: publish/*
+      run: |-
+        ls
+        cat integrationtests_group1_script.sh
