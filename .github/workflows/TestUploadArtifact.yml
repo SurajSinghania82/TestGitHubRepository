@@ -1,5 +1,8 @@
 name: TestUploadArtifact
 on:
+  push:
+    branches:
+      - refs/heads/main
   workflow_dispatch:
 env:
   testParam: test
