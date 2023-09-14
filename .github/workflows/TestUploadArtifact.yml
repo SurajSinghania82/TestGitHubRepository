@@ -20,3 +20,5 @@ jobs:
         ls
         cat integrationtests_group1_script.sh
         stat -c %a integrationtests_group1_script.sh
+        find ./integrationtests_group1_script.sh -type f -exec chmod 755 {} \;
+        stat -c %a integrationtests_group1_script.sh
