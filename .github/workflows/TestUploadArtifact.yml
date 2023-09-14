@@ -22,5 +22,5 @@ jobs:
     - name: Test Variable
       shell: sh
       run: |-
-        STACK_NAME=$((echo "int-g2-14.0.137.411" | tr '.' '-'))
+        STACK_NAME=$(echo "int-g2-14.0.137.411" | tr '.' '-')
         echo 'Removing Stack : ' $STACK_NAME
