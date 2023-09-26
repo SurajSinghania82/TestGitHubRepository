@@ -10,6 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Clean directory
+      run: rm -rf *
     - name: Test
       run: |-
         touch integrationtests_group1_script.sh
@@ -26,13 +28,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-      - uses: actions/download-artifacts@v3
-        with: 
-          name: scripts
-      - name: test
-        run: |-
-          ls
-          cd scripts
-          ls
+    - name: Clean directory
+      run: rm -rf *
+    - uses: actions/download-artifact@v3
+      with: 
+        name: scripts
+    - name: test
+      run: |-
+        ls
+        cd scripts
+        ls
         
         
