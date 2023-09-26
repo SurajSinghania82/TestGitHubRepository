@@ -17,8 +17,8 @@ jobs:
         touch integrationtests_group1_script.sh
         echo 'files=$(find "../tests/distribution/Release/publish" -name "*.Tests.dll" | tr '\n' ' ')' >> integrationtests_group1_script.sh
         echo 'echo $files' >> integrationtests_group1_script.sh
-        mkdir scripts
-        cp integrationtests_group1_script.sh ./scripts/
+        mkdir -p scripts/scripts
+        cp integrationtests_group1_script.sh ./scripts/scripts/
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
