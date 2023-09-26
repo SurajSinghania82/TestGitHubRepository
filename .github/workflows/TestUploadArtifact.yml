@@ -15,10 +15,24 @@ jobs:
         touch integrationtests_group1_script.sh
         echo 'files=$(find "../tests/distribution/Release/publish" -name "*.Tests.dll" | tr '\n' ' ')' >> integrationtests_group1_script.sh
         echo 'echo $files' >> integrationtests_group1_script.sh
-    - name: Test
-      run: |-
-        ls
-        cat integrationtests_group1_script.sh
-        stat -c %a integrationtests_group1_script.sh
-        find ./integrationtests_group1_script.sh -type f -exec chmod 755 {} \;
-        stat -c %a integrationtests_group1_script.sh
+        mkdir scripts
+        cp integrationtests_group1_script.sh /scripts/
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: scripts
+        path: scripts
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/download-artifacts@v3
+        with: 
+          name: scripts
+      - name: test
+        run: |-
+          ls
+          cd scripts
+          ls
+        
+        
