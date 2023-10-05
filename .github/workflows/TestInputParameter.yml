@@ -1,0 +1,17 @@
+name: CI_Deployments
+on:
+  workflow_dispatch:
+    inputs:
+      deploymentName:
+        description: 'Deployment Name'
+        required: true
+jobs:
+  TestParameter:
+    runs-on: [ubuntu-latest]
+    env:
+      deploymentName: ${{ inputs.deploymentName }}
+    steps:
+      - name: Print Variable
+        run: |-
+          echo "${{ env.deploymentName }}"
+  
