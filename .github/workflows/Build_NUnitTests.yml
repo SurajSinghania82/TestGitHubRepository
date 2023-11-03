@@ -1,8 +1,5 @@
 name: Build_NUnitTests1
 on:
-  push:
-    branches:
-      - refs/heads/main
   workflow_dispatch:
     {}
 env:
