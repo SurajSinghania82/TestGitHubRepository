@@ -1,8 +1,5 @@
 name: DependentParameters
 on:
-  push:
-    branches:
-      - refs/heads/main
   workflow_dispatch:
     {}
 jobs:
