@@ -1,8 +1,5 @@
 name: Build_Dependency
 on:
-  push:
-    branches:
-      - refs/heads/main
   workflow_dispatch:
     {}
   workflow_run:
