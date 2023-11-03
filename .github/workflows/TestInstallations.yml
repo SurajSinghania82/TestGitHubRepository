@@ -10,5 +10,3 @@ jobs:
     steps:
     - name: install chrome
       run: choco install googlechrome
-        
-        
