@@ -1,4 +1,4 @@
-name: TestUploadArtifact
+name: TestInstallations
 on:
   push:
     branches:
