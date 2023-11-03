@@ -1,0 +1,14 @@
+name: TestUploadArtifact
+on:
+  push:
+    branches:
+      - refs/heads/main
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: install chrome
+      run: choco install googlechrome
+        
+        
