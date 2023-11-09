@@ -11,4 +11,29 @@ jobs:
         shell: powershell
         run: |-
           [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]:Tls, [Net.SecurityProtocolType]:Tls11, [Net.SecurityProtocolType]:Tls12, [Net.SecurityProtocolType]:Ss13
+          Function Install-Sdk3.1 {
+            param ( [string] $WorkingFolder
+          )
+            $download = "https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.ps1"
+            $SDK_installer = Join-Path -Path $WorkingFolder -ChildPath "dotnet-install.ps1"
+            Invoke-WebRequest -Uri $download -OutFile $SDK_installer
+            If ((Test-Path $SDK_installer)) {
+              "File downloaded!"
+            }
+            else {
+              "File not downloaded!"
+            }
+            "attempting to install..."
+            try {
+              $sdk_var = .\dotnet-install.ps1 -Version 3.1 -InstallDir "C:\Program Files\dotnet"
+            }
+            catch {
+              $_.Exception
+            }
+          }
+          Install-SDK3.1 "."
+      - name: Test dotnet sdks
+        run: dotnet --list-sdks
+      - name: Test dotnet version
+        run: dotnet --version
           
