@@ -10,7 +10,6 @@ jobs:
       - name: Install dotnet 3.1
         shell: powershell
         run: |-
-          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Ss13
           Function Install-Sdk3.1 {
             param ( [string] $WorkingFolder
           )
