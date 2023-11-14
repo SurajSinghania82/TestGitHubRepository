@@ -13,8 +13,8 @@ jobs:
           Function Install-Sdk3.1 {
             param ( [string] $WorkingFolder
           )
-            $download = "https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.ps1"
-            $SDK_installer = Join-Path -Path $WorkingFolder -ChildPath "dotnet-install.ps1"
+            $download = "https://download.visualstudio.microsoft.com/download/pr/b70ad520-0e60-43f5-aee2-d3965094a40d/667c122b3736dcbfa1beff08092dbfc3/dotnet-sdk-3.1.426-win-x64.exe"
+            $SDK_installer = Join-Path -Path $WorkingFolder -ChildPath "dotnet-sdk-3.1.426-win-x64.exe"
             Invoke-WebRequest -Uri $download -OutFile $SDK_installer
             If ((Test-Path $SDK_installer)) {
               "File downloaded!"
@@ -24,7 +24,7 @@ jobs:
             }
             "attempting to install..."
             try {
-              $sdk_var = .\dotnet-install.ps1 -Version 3.1 -InstallDir "C:\Program Files\dotnet"
+              Start-Process -FilePath "dotnet-sdk-3.1.426-win-x64.exe" -NoNewWindow -Wait -PassThru
             }
             catch {
               $_.Exception
